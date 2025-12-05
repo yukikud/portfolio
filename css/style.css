@@ -12,7 +12,7 @@ header {
   left: 0;
   width: 100%;
   height: auto;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
   z-index: 1000;
@@ -65,6 +65,7 @@ nav a {
     transition: transform 0.3s ease;
   }
 
+  
   nav.open {
     transform: translateX(0); /* 開いた状態 */
   }
@@ -77,6 +78,10 @@ nav a {
 
   .hamburger {
     display: flex; /* スマホで表示 */
+    position: absolute;
+    top: 1rem;
+    right: 5rem;
+    z-index: 1000;
   }
 }
 
@@ -219,16 +224,18 @@ nav a {
 }
 
 .about-image {
-  flex: 1;
-  min-width: 300px;
-  text-align: center;
-  margin-right: 5vw;
+  position: sticky;
+  top: 50px; /* スクロールしてもこの位置に留まる */
 }
 
 .about-image img {
-  max-width: 100%;
+  max-width: 40vw;
   height: auto;
   border-radius: 8px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  mask-repeat: no-repeat;
+  mask-size: 100% 200%;
+  margin-right: 5vw;
 }
 
 .works {
