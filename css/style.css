@@ -1,0 +1,545 @@
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: white;
+  color: #333;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+  background-color: rgba(124, 124, 124, 0.6);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  margin-left: 50vw; /* 左側の要素を押し出して右寄せ */
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* ハンバーガーアイコン */
+.hamburger {
+  display: none; /* PCでは非表示 */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+}
+
+/* スマホ用ナビ */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(124,124,124,0.9);
+    width: 200px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  nav.open {
+    transform: translateX(0); /* 開いた状態 */
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .hamburger {
+    display: flex; /* スマホで表示 */
+  }
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.edition-block {
+  display: flex;
+  flex-direction: column;
+  font-size: 4vw;
+  font-weight: bold;
+  margin-top: 5vh;
+  margin-left: 10vw;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.name-block {
+  display: flex;
+  flex-direction: column;
+  font-size: 10rem;
+  font-weight: bold;
+  line-height: 1;
+  margin-left: 10vw;
+}
+
+.vol-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 6rem;
+  margin-left: 20vw;
+}
+
+.portfolio-label {
+  display: flex;
+  right: 2vw;
+  font-size: 5rem; /* 大きくする */
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-left: 50vw; /* 右に寄せるための余白 */
+  margin-bottom: 10vw;
+}
+
+.cat-graphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('/images/top/top.png') no-repeat center;
+  background-size: cover;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.title-block h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.title-block h2 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.title-block p {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+/* 左からスライドイン */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-200px);
+  animation: slideLeft 2s ease-out forwards;
+}
+
+@keyframes slideLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 右からスライドイン */
+.slide-right {
+  opacity: 0;
+  transform: translateX(200px);
+  animation: slideRight 2s ease-out forwards;
+}
+
+@keyframes slideRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.about {
+  padding: 6rem 2rem;
+  background-color: #C6C6C6;
+  font-weight: bold;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #1CABB0;
+  margin-left: 5vw;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: #1CABB0;
+  margin-bottom: 2rem;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+  margin-right: 5vw;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.works {
+  padding: 6rem 2rem;
+  background-color: #C2BEB9;
+  color: #1CABB0;
+}
+
+.works h2 {
+  font-size: 2.5rem;
+  color: 1CABB0;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.work-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.work-thumb {
+  width: 300px;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-thumb:hover {
+  transform: scale(1.05); /* ふわっと拡大 */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* 影を強調 */
+}
+
+.work-text {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #1CABB0;
+}
+
+.work-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1CABB0;
+}
+
+.work-item p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.work-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+
+.work-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.work-item.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.skills {
+  padding: 6rem 2rem;
+  background-color: #fff;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  color: #1CABB0;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: scale(1.02);
+}
+
+.skill-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.skill-item h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.skill-item p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.contact {
+  background-color: #C6C6C6;
+  padding: 6rem 0;
+}
+.photo-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-photo {
+  width: 30vw;
+  height: auto;
+  display: block;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.headline-overlay {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.4); /* ← 読みやすくする影 */
+  line-height: 0.6;
+}
+
+.headline-overlay span {
+  display: block;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  color: #1CABB0;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact-message {
+  margin-top: 5vh;
+  text-align: center;
+}
+
+.contact-mail {
+  width: 50vw;
+  max-width: 500px;/* ← 最大サイズを制限（任意） */
+  height: auto;    /* ← 縦横比を保つ */
+  margin: 1rem auto;
+  display: block;
+}
+
+.copyright {
+  text-align: center;
+}
+
+/* タブレット以下 */
+@media (max-width: 1024px) {
+  /* hero */
+  .name-block {
+    font-size: 6rem;
+    margin-left: 5vw;
+  }
+  .vol-block {
+    font-size: 4rem;
+    margin-left: 10vw;
+  }
+  .portfolio-label {
+    font-size: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* about */
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-text {
+    margin-left: 0;
+    font-size: 1rem;
+  }
+  .about-image {
+    margin-right: 0;
+  }
+
+  /* works */
+  .work-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .work-thumb {
+    width: 70%;
+    margin-bottom: 1rem;
+  }
+  .work-text {
+    font-size: 1rem;
+  }
+
+  /* skills */
+  .skill-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .skill-item img {
+    margin-bottom: 1rem;
+  }
+}
+
+/* スマホ以下 */
+@media (max-width: 600px) {
+  /* hero */
+  .name-block {
+    font-size: 3rem;
+    margin-left: 0;
+    text-align: center;
+  }
+  .vol-block {
+    font-size: 2rem;
+    margin-left: 0;
+    text-align: center;
+  }
+  .portfolio-label {
+    font-size: 2rem;
+    margin: 2rem auto;
+    text-align: center;
+  }
+
+  /* about */
+  .about-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* works */
+  .work-thumb {
+    width: 90%;
+  }
+  .work-text h3 {
+    font-size: 1.2rem;
+  }
+  .work-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* skills */
+  .skills h2 {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .skill-item h3 {
+    font-size: 1.2rem;
+  }
+  .skill-item p {
+    font-size: 0.9rem;
+  }
+
+  /* contact */
+  .headline-overlay {
+    font-size: 2rem;
+    line-height: 1;
+    top: 15%;
+  }
+  .contact-photo {
+    width: 80%;
+  }
+  .contact-mail {
+    width: 80%;
+    max-width: 300px;
+  }
+}
