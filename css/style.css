@@ -55,6 +55,9 @@ nav a {
 
 /* スマホ用ナビ */
 @media (max-width: 768px) {
+  header {
+    padding: 1.5rem 2rem;
+  }
   nav {
     position: absolute;
     top: 60px;
