@@ -153,9 +153,14 @@ nav a {
   z-index: 0;
 }
 
-.title-block h1 {
-  font-size: 4rem;
+h1 {
+  position: relative;
+  top: -50px; 
+  font-size: 10px; 
   margin: 0;
+  color: #999;
+  text-align: center;
+  z-index: 2; 
 }
 
 .title-block h2 {
@@ -505,6 +510,11 @@ nav a {
     font-size: 2rem;
     margin: 2rem auto;
     text-align: center;
+  }
+
+  h1 {
+    position: relative;
+    margin-top: 80px;  
   }
 
   /* about */
