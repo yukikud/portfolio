@@ -32,10 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.querySelector(".hamburger");
+  const toggleBtn = document.getElementById("menuToggle"); // SVGボタン
   const nav = document.querySelector("nav");
 
-  hamburger.addEventListener("click", () => {
-    nav.classList.toggle("open");
+  toggleBtn.addEventListener("click", () => {
+    const expanded = toggleBtn.getAttribute("aria-expanded") === "true";
+    toggleBtn.setAttribute("aria-expanded", String(!expanded));
+    nav.classList.toggle("open", !expanded); // ナビ開閉
   });
 });

@@ -12,7 +12,7 @@ header {
   left: 0;
   width: 100%;
   height: auto;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2rem;
   display: flex;
   justify-content: space-between;
   z-index: 1000;
@@ -36,28 +36,29 @@ nav a {
   font-weight: bold;
 }
 
-/* ハンバーガーアイコン */
-.hamburger {
+/* トグルボタン（SVG） */
+.toggle-btn {
   display: none; /* PCでは非表示 */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #333; /* currentColorでSVGに反映 */
+  z-index: 1000;
 }
 
-.hamburger span {
-  display: block;
-  height: 4px;
-  background: #333;
-  border-radius: 2px;
-}
+/* アイコンの切り替え */
+.icon .menu-icon { display: block; }
+.icon .close-icon { display: none; }
+
+.toggle-btn[aria-expanded="true"] .menu-icon { display: none; }
+.toggle-btn[aria-expanded="true"] .close-icon { display: block; }
 
 /* スマホ用ナビ */
 @media (max-width: 768px) {
-  header {
-    padding: 1.5rem 2rem;
-  }
   nav {
     position: absolute;
     top: 60px;
@@ -68,7 +69,6 @@ nav a {
     transition: transform 0.3s ease;
   }
 
-  
   nav.open {
     transform: translateX(0); /* 開いた状態 */
   }
@@ -79,12 +79,12 @@ nav a {
     padding: 1rem;
   }
 
-  .hamburger {
-    display: flex; /* スマホで表示 */
+  /* ハンバーガーの代わりにトグルボタンを表示 */
+  .toggle-btn {
+    display: flex;
     position: absolute;
-    top: 1rem;
+    top: 0.1rem;
     right: 5rem;
-    z-index: 1000;
   }
 }
 
