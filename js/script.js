@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }, {
-    threshold: 0.2 // 20%見えたら反応
+    threshold: 0.4 // 40%見えたら反応
   });
 
   items.forEach(item => observer.observe(item));
