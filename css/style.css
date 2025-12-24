@@ -14,14 +14,17 @@ header {
   height: auto;
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  align-items: center;
   z-index: 1000;
   background-color: rgba(124, 124, 124, 0.6);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav {
-  margin-left: 50vw; /* 左側の要素を押し出して右寄せ */
+  margin-left: 0;
+  padding-right: 3rem;
+  width: fit-content;
 }
 
 nav ul {
@@ -526,7 +529,8 @@ h1 {
 /* スマホ以下 */
 @media (max-width: 600px) {
   nav {
-    margin-left: 0; /* スマホでは余白をなくす */
+    margin-right: 0; /* スマホでは余白をなくす */
+    padding-right:0;
   }
   /* hero */
   .name-block {
