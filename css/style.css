@@ -120,7 +120,7 @@ nav a {
 .name-block {
   display: flex;
   flex-direction: column;
-  font-size: 10rem;
+  font-size: clamp(2rem, 8vw, 10rem);
   font-weight: bold;
   line-height: 1;
   margin-left: 10vw;
@@ -526,9 +526,12 @@ h1 {
 
 /* スマホ以下 */
 @media (max-width: 600px) {
+  nav {
+    margin-left: 0; /* スマホでは余白をなくす */
+  }
   /* hero */
   .name-block {
-    font-size: 3rem;
+    font-size: clamp(2rem, 8vw, 3rem);
     margin-left: 0;
     text-align: center;
   }
@@ -542,7 +545,9 @@ h1 {
     margin: 2rem auto;
     text-align: center;
   }
-
+  .cat-graphic {
+    max-width: 100%; /* 横スクロール防止 */
+  }
   h1 {
     position: relative;
     margin-top: 80px;  
