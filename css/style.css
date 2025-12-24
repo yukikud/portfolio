@@ -234,6 +234,21 @@ h1 {
   margin-bottom: 2rem;
 }
 
+.portfolio-intro {
+  color: #000; /* 黒字 */
+}
+
+/* リンクは通常黒字、ホバー時にセージ色 */
+.portfolio-intro a {
+  color: #000000; /* 通常は黒字 */
+  text-decoration: none;
+}
+
+.portfolio-intro a:hover {
+  color: #1CABB0; /* ホバー時にセージ色 */
+  text-decoration: underline; /* ホバー時に下線を出すと親切 */
+}
+
 .about-image {
   position: sticky;
   top: 50px; /* スクロールしてもこの位置に留まる */
@@ -259,6 +274,10 @@ h1 {
   font-size: 2.5rem;
   color: 1CABB0;
   margin-bottom: 3rem;
+  text-align: center;
+}
+
+.works-text{
   text-align: center;
 }
 
