@@ -65,15 +65,14 @@ nav a {
   nav {
     position: absolute;
     top: 60px;
-    right: 0;
+    right: -200px;
     background: rgba(124,124,124,0.9);
     width: 200px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
+    transition: right 0.3s ease;
   }
 
   nav.open {
-    transform: translateX(0); /* 開いた状態 */
+    right: 0; /* 開いた状態 */
   }
 
   nav ul {
