@@ -239,9 +239,17 @@ h1 {
 }
 
 /* リンクは通常黒字、ホバー時にセージ色 */
-.portfolio-intro a {
-  color: #000000; /* 通常は黒字 */
+.btn {
+  display: inline-block;
+  padding: 10px 10px;
+  background-color: #1CABB0; 
+  color: #fff;
   text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.btn:hover {
+  background-color: #5d5d5d; /* ホバー時の色 */
 }
 
 .portfolio-intro a:hover {
