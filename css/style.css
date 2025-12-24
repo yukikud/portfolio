@@ -67,7 +67,7 @@ nav a {
   }
   nav {
     position: absolute;
-    top: 60px;
+    top: 100%;
     right: -200px;
     background: rgba(124,124,124,0.9);
     width: 200px;
