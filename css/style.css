@@ -3,12 +3,10 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
   background: white;
   color: #333;
-  overflow-x: hidden;
 }
 
-main {
-  max-width: 100%;
-  overflow-x: hidden; /* 横スクロールを防ぐ */
+html, body {
+  overflow-x: hidden;
 }
 
 header {
