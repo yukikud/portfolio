@@ -6,6 +6,11 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  max-width: 100%;
+  overflow-x: hidden; /* 横スクロールを防ぐ */
+}
+
 header {
   position: fixed;
   top: 0;
